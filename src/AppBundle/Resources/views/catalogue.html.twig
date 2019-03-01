@@ -1,0 +1,77 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block title %} Catalogues {% for i in 1|somme %} | {{ i.nom }} {% endfor %} {#{{ parent() }}#}{% endblock %}
+
+
+{% block stylesheet %}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/bootstrap4/bootstrap.min.css') }}">
+    <link href="{{ asset('assets/front/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/contact.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/contact_responsive.css') }}">
+
+{% endblock %}
+
+
+{% block banniere %} {% endblock %}
+
+{% block content %}
+
+
+    <div class="home">
+        <div class="home_container">
+            <div class="home_background" style="background-image:url({{ asset('assets/front/images/certified.jpg') }})"></div>
+            <div class="home_content_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="breadcrumbs">
+                                    <ul>
+                                        <li><a href="#" > Acceuil </a></li>
+                                        <li> catalogues </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container contenu">
+        <h2 class="mt-4">Catalogues</h2>
+
+
+
+               {# <a href="{{ path('catalogue_page', {'id' : c.id }) }}" target="_blank"><H6> {{ c.titre }}</H6></a>#}
+
+
+
+
+
+        <div class="card-deck" style="margin-top: 60px">
+            {% for c in catalogue %}
+                <div class="card ">
+                    <a href="{{ path('catalogue_page', {'id' : c.id }) }}" target="_blank"><img class="card-img-top" src="{{ asset('uploads/') ~ c.path }}" alt="Image du catalogue"></a>
+                    <div class="card-body text-primary">
+                        <a href="{{ path('catalogue_page', {'id' : c.id }) }}" target="_blank"><p class="card-text" style="text-align: center"> {{ c.titre }} </p></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block slider %} {% endblock %}

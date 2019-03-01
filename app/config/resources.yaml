@@ -1,0 +1,7 @@
+# config/resources.yaml
+sylius_resource:
+    resources:
+        app.supplier:
+            driver: doctrine/orm # You can use also different driver here
+            classes:
+                model: AppBundle\Entity\infocontact

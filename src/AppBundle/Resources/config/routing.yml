@@ -1,0 +1,405 @@
+
+##################### Infocontact ########################
+
+infocontact_add:
+    path:       admin/infocontact/add
+    defaults:   { _controller: AppBundle:infocontact:add }
+
+infocontact_list:
+    path:       admin/infocontact/list
+    defaults:   { _controller: AppBundle:infocontact:list }
+
+infocontact_edit:
+    path:       admin/infocontact/edit/{id}
+    defaults:   { _controller: AppBundle:infocontact:edit }
+
+infocontact_delete:
+    path:       admin/infocontact/delete/{id}
+    defaults:   { _controller: AppBundle:infocontact:delete }
+
+infocontact:
+    path:       infocontact
+    defaults:   { _controller: AppBundle:infocontact:infocontact }
+
+
+##################### Presentation ########################
+
+presentation_add:
+    path:       admin/presentation/add
+    defaults:   { _controller: AppBundle:presentation:add }
+
+presentation_list:
+    path:       admin/presentation/list
+    defaults:   { _controller: AppBundle:presentation:list }
+
+presentation_edit:
+    path:       admin/presentation/edit/{id}
+    defaults:   { _controller: AppBundle:presentation:edit }
+
+presentation_delete:
+    path:       admin/presentation/delete/{id}
+    defaults:   { _controller: AppBundle:presentation:delete }
+presentation:
+    path:       /{_locale}/presentation
+    defaults:   { _controller: AppBundle:presentation:presentation }
+
+
+
+
+##################### Mot president ######################
+
+
+motpresident_add:
+    path:       admin/motpresident/add
+    defaults:   { _controller: AppBundle:motpresident:add }
+
+motpresident_list:
+    path:       admin/motpresident/list
+    defaults:   { _controller: AppBundle:motpresident:list }
+
+motpresident_edit:
+    path:       admin/motpresident/edit/{id}
+    defaults:   { _controller: AppBundle:motpresident:edit }
+
+motpresident_delete:
+    path:       admin/motpresident/delete/{id}
+    defaults:   { _controller: AppBundle:motpresident:delete }
+motpresident:
+    path:       /{_locale}/motpresident
+    defaults:   { _controller: AppBundle:motpresident:motpresident }
+
+
+
+##################### Slider ######################
+
+
+slider_add:
+    path:       admin/slider/add
+    defaults:   { _controller: AppBundle:slider:add }
+
+slider_list:
+    path:       admin/slider/list
+    defaults:   { _controller: AppBundle:slider:list }
+
+slider_edit:
+    path:       admin/slider/edit/{id}
+    defaults:   { _controller: AppBundle:slider:edit }
+
+slider_delete:
+    path:       admin/slider/delete/{id}
+    defaults:   { _controller: AppBundle:slider:delete }
+
+slider:
+    path:       slider
+    defaults:   { _controller: AppBundle:default:slider }
+
+
+
+
+##################### Banniere ######################
+
+
+banniere_add:
+    path:       admin/banniere/add
+    defaults:   { _controller: AppBundle:banniere:add }
+
+banniere_list:
+    path:       admin/banniere/list
+    defaults:   { _controller: AppBundle:banniere:list }
+
+banniere_edit:
+    path:       admin/banniere/edit/{id}
+    defaults:   { _controller: AppBundle:banniere:edit }
+
+banniere_delete:
+    path:       admin/banniere/delete/{id}
+    defaults:   { _controller: AppBundle:banniere:delete }
+
+banniere:
+    path:       banniere
+    defaults:   { _controller: AppBundle:default:banniere }
+
+
+
+
+##################### Newsletter ########################
+
+newsletter_add:
+    path:       newsletter
+    defaults:   { _controller: AppBundle:newsletter:add }
+    methods:    [POST]
+
+newsletter_list:
+    path:       admin/newsletter/list
+    defaults:   { _controller: AppBundle:newsletter:list }
+
+newsletter_edit:
+    path:       admin/newsletter/edit/{id}
+    defaults:   { _controller: AppBundle:newsletter:edit }
+
+newsletter_delete:
+    path:       admin/newsletter/delete/{id}
+    defaults:   { _controller: AppBundle:newsletter:delete }
+
+
+
+
+##################### Telecharegement ########################
+
+telechargement_add:
+    path:       admin/telechargement/add
+    defaults:   { _controller: AppBundle:telechargement:add }
+
+telechargement_list:
+    path:       admin/telechargement/list
+    defaults:   { _controller: AppBundle:telechargement:list }
+
+telechargement_edit:
+    path:       admin/telechargement/edit/{id}
+    defaults:   { _controller: AppBundle:telechargement:edit }
+
+telechargement_delete:
+    path:       admin/telechargement/delete/{id}
+    defaults:   { _controller: AppBundle:telechargement:delete }
+
+telechargement:
+    path:       /{_locale}/telechargement
+    defaults:   { _controller: AppBundle:telechargement:telechargement }
+
+
+
+##################### CGV ########################
+
+cgv_add:
+    path:       admin/cgv/add
+    defaults:   { _controller: AppBundle:cgv:add }
+
+cgv_list:
+    path:       admin/cgv/list
+    defaults:   { _controller: AppBundle:cgv:list }
+
+cgv_edit:
+    path:       admin/cgv/edit/{id}
+    defaults:   { _controller: AppBundle:cgv:edit }
+
+cgv_delete:
+    path:       admin/cgv/delete/{id}
+    defaults:   { _controller: AppBundle:cgv:delete }
+
+cgv:
+    path:       /{_locale}/cgv
+    defaults:   { _controller: AppBundle:cgv:cgv }
+
+
+
+##################### Marque ########################
+
+marque_add:
+    path:       admin/marque/add
+    defaults:   { _controller: AppBundle:marque:add }
+
+marque_list:
+    path:       admin/marque/list
+    defaults:   { _controller: AppBundle:marque:list }
+
+marque_edit:
+    path:       admin/marque/edit/{id}
+    defaults:   { _controller: AppBundle:marque:edit }
+
+marque_delete:
+    path:       admin/marque/delete/{id}
+    defaults:   { _controller: AppBundle:marque:delete }
+
+marque:
+    path:       /{_locale}/marque
+    defaults:   { _controller: AppBundle:marque:marque }
+
+
+##################### Textmarque ########################
+
+textmarque_add:
+    path:       admin/textmarque/add
+    defaults:   { _controller: AppBundle:textmarque:add }
+
+textmarque_list:
+    path:       admin/textmarque/list
+    defaults:   { _controller: AppBundle:textmarque:list }
+
+textmarque_edit:
+    path:       admin/textmarque/edit/{id}
+    defaults:   { _controller: AppBundle:textmarque:edit }
+
+textmarque_delete:
+    path:       admin/textmarque/delete/{id}
+    defaults:   { _controller: AppBundle:textmarque:delete }
+
+
+##################### Contact ########################
+
+contact_add:
+    path:       contact
+    defaults:   { _controller: AppBundle:contact:add }
+
+contact_list:
+    path:       admin/contact/list
+    defaults:   { _controller: AppBundle:contact:list }
+
+contact_edit:
+    path:       admin/contact/edit/{id}
+    defaults:   { _controller: AppBundle:contact:edit }
+
+contact_delete:
+    path:       admin/contact/delete/{id}
+    defaults:   { _controller: AppBundle:contact:delete }
+
+contact:
+    path:       /{_locale}/contact
+    defaults:   { _controller: AppBundle:contact:contact }
+
+
+##################### Certificat ########################
+
+certificat_add:
+    path:       admin/certificat/add
+    defaults:   { _controller: AppBundle:certificat:add }
+
+certificat_list:
+    path:       admin/certificat/list
+    defaults:   { _controller: AppBundle:certificat:list }
+
+certificat_edit:
+    path:       admin/certificat/edit/{id}
+    defaults:   { _controller: AppBundle:certificat:edit }
+
+certificat_delete:
+    path:       admin/certificat/delete/{id}
+    defaults:   { _controller: AppBundle:certificat:delete }
+
+certificat:
+    path:       /{_locale}/certificat
+    defaults:   { _controller: AppBundle:certificat:certificat }
+
+
+
+##################### Tarif ########################
+
+tarif_add:
+    path:       admin/tarif/add
+    defaults:   { _controller: AppBundle:tarif:add }
+
+tarif_list:
+    path:       admin/tarif/list
+    defaults:   { _controller: AppBundle:tarif:list }
+
+tarif_edit:
+    path:       admin/tarif/edit/{id}
+    defaults:   { _controller: AppBundle:tarif:edit }
+
+tarif_delete:
+    path:       admin/tarif/delete/{id}
+    defaults:   { _controller: AppBundle:tarif:delete }
+
+tarif:
+    path:       /{_locale}/tarif
+    defaults:   { _controller: AppBundle:tarif:tarif }
+
+
+
+##################### SAV ########################
+
+sav_add:
+    path:       admin/sav/add
+    defaults:   { _controller: AppBundle:sav:add }
+
+sav_list:
+    path:       admin/sav/list
+    defaults:   { _controller: AppBundle:sav:list }
+
+sav_edit:
+    path:       admin/sav/edit/{id}
+    defaults:   { _controller: AppBundle:sav:edit }
+
+sav_delete:
+    path:       admin/sav/delete/{id}
+    defaults:   { _controller: AppBundle:sav:delete }
+
+sav:
+    path:       /{_locale}/sav
+    defaults:   { _controller: AppBundle:sav:sav }
+
+
+
+##################### Devis ########################
+
+devis_add:
+    path:       admin/devis/add
+    defaults:   { _controller: AppBundle:devis:add }
+
+devis_list:
+    path:       admin/devis/list
+    defaults:   { _controller: AppBundle:devis:list }
+
+devis_edit:
+    path:       admin/devis/edit/{id}
+    defaults:   { _controller: AppBundle:devis:edit }
+
+devis_delete:
+    path:       admin/devis/delete/{id}
+    defaults:   { _controller: AppBundle:devis:delete }
+devis:
+    path:       /{_locale}/devis
+    defaults:   { _controller: AppBundle:devis:devis }
+
+
+
+##################### Catalogue ########################
+
+
+catalogue_add:
+    path:       admin/catalogue/add
+    defaults:   { _controller: AppBundle:catalogue:add }
+
+catalogue_list:
+    path:       admin/catalogue/list
+    defaults:   { _controller: AppBundle:catalogue:list }
+
+catalogue_edit:
+    path:       admin/catalogue/edit/{id}
+    defaults:   { _controller: AppBundle:catalogue:edit }
+
+catalogue_delete:
+    path:       admin/catalogue/delete/{id}
+    defaults:   { _controller: AppBundle:catalogue:delete }
+
+catalogue:
+    path:       /{_locale}/catalogues
+    defaults:   { _controller: AppBundle:catalogue:catalogue }
+
+catalogue_page:
+    path:       /{_locale}/catalogue/{id}
+    defaults:   { _controller: AppBundle:catalogue:cataloguepage }
+
+
+##################### Pages ########################
+
+
+pages_add:
+    path:       admin/pages/add
+    defaults:   { _controller: AppBundle:pages:add }
+
+pages_list:
+    path:       admin/pages/list
+    defaults:   { _controller: AppBundle:pages:list }
+
+pages_edit:
+    path:       admin/pages/edit/{id}
+    defaults:   { _controller: AppBundle:pages:edit }
+
+pages_delete:
+    path:       admin/pages/delete/{id}
+    defaults:   { _controller: AppBundle:pages:delete }
+
+pages:
+    path:       /{_locale}/pages
+    defaults:   { _controller: AppBundle:pages:catalogue }
+

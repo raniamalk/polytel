@@ -1,0 +1,13 @@
+app_admin_infocontact:
+    resource: |
+        alias: app.infocontact
+        section: admin
+        templates: SyliusAdminBundle:Crud
+        redirect: update
+        grid: app_admin_infocontact
+        vars:
+            all:
+                subheader: app.ui.infocontact
+            index:
+                icon: 'file image outline'
+    type: sylius.resource

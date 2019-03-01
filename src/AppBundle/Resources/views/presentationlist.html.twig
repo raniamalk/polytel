@@ -1,0 +1,79 @@
+{% import '@SyliusUi/Macro/pagination.html.twig' as pagination %}
+{% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+{% import '@SyliusUi/Macro/table.html.twig' as table %}
+
+{% extends 'SyliusAdminBundle::layout.html.twig' %}
+
+{% block title %} Presentation {% for i in 1|somme %} | {{ i.nom }} {% endfor %} {#{{ parent() }}#}{% endblock %}
+
+{% block content %}
+
+    <h1> Presentation </h1>
+    <style>
+        table, td, th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 15px;
+        }
+
+        tr:hover {background-color:#f5f5f5;}
+    </style>
+
+
+    <div class="col-lg-12">
+    {% for p in presentation %}
+
+
+        <div class="card">
+
+            <div class="card-body">
+                <form class="form-horizontal">
+                    <div class="table-responsive">
+                        <table class="table" id="table">
+
+
+
+
+
+
+                                <tr>
+                                    <td> Image </td>
+                                    <td> <img alt="pas d'image" src="{{ asset('uploads/') ~ p.path }}"  width="120" height="60"> </td>
+                                </tr>
+                                <tr>
+                                    <td> Titre </td>
+                                    <td> {{ p.titre}} </td>
+                                </tr>
+                                <tr>
+                                    <td> Contenu </td>
+                                    <td> {{ p.contenu | slice (0,1000) | raw }} </td>
+                                </tr>
+
+
+
+
+                        </table>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <br>
+   <a class="ui icon button  primary" href="{{ path('presentation_edit', {'id' : p.id}) }}"><span class="btn info" aria-hidden="true"> Modifier </span></a>
+
+    </div>
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block title %} Mot president {% for i in 1|somme %} | {{ i.nom }} {% endfor %} {#{{ parent() }}#}{% endblock %}
+
+{% block stylesheet %}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/bootstrap4/bootstrap.min.css') }}">
+    <link href="{{ asset('assets/front/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/contact.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/contact_responsive.css') }}">
+
+{% endblock %}
+
+{% block banniere %} {% endblock %}
+
+{% block content %}
+
+
+    <!-- Header with Background Image -->
+    {#<header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="display-3 text-center text-white mt-4"> </h1>
+                </div>
+            </div>
+        </div>
+    </header>#}
+
+    <div class="home">
+        <div class="home_container">
+            <div class="home_background" style="background-image:url({{ asset('assets/front/images/modirecteurt.jpg') }})"></div>
+            <div class="home_content_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="breadcrumbs">
+                                    <ul>
+                                        <li><a href="#" > Acceuil </a></li>
+                                        <li> Mot president </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Page Content -->
+    <div class="container contenu">
+
+        <div class="row">
+            {#<div class="col-sm-3">
+
+            </div>#}
+            {% for m in motpresident %}
+                <div class="col-sm-12">
+                    <h2 class="mt-4">{{ m.titre}}</h2>
+                    <br>
+                    <p class="texte-style"> {{ m.contenu }}.</p>
+
+                </div>
+            {% endfor %}
+
+        </div>
+        <!-- /.row -->
+
+
+
+    </div>
+
+
+{% endblock %}
+
+{% block slider %} {% endblock %}

@@ -1,0 +1,138 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block title %} Qui somme-nous? {% for i in 1|somme %} | {{ i.nom }} {% endfor %} {% endblock %}
+
+{% block stylesheet %}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/bootstrap4/bootstrap.min.css') }}">
+    <link href="{{ asset('assets/front/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/contact.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/contact_responsive.css') }}">
+
+{% endblock %}
+
+{% block banniere %} {% endblock %}
+
+{% block content %}
+
+
+        <!-- Header with Background Image -->
+        {#<header class="business-header2">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="display-3 text-center text-white mt-4"> </h1>
+                    </div>
+                </div>
+            </div>
+        </header>#}
+        <div class="home">
+            <div class="home_container">
+                <div class="home_background" style="background-image:url({{ asset('assets/front/images/download.jpg') }})"></div>
+                <div class="home_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="home_content">
+                                    <div class="breadcrumbs">
+                                        <ul>
+                                            <li><a href="#" > Acceuil </a></li>
+                                            <li> Téléchargement </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="container pages-visibility">
+            {#<div class="col-lg-3">
+            </div>#}
+            <div class="col-lg-12 download">
+                <h1> Téléchargement </h1>
+                <div class="row row2">
+
+
+                    {% for t in telechargement %}
+
+                    <div class="col-lg-3 col-sm-3 my-3">
+                        <div class="card">
+                            {#<img class="card-img-top" src="http://placehold.it/300x200" alt="">#}
+                            <div class="card-body">
+                                <h4 class="card-title">{{ t.titre }}</h4>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ asset('uploads/' ~ t.path) }}" target="_blank" class="btn btn-primary">Télécharger</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+
+                </div>
+            <!-- /.row -->
+            </div>
+        </div>
+        <!-- /.container -->
+
+
+    {#<div class="col-lg-12">
+    {% for p in presentation %}
+
+
+        <div class="card">
+
+            <div class="card-body">
+                <form class="form-horizontal">
+                    <div class="table-responsive">
+                        <table class="table" id="table">
+
+
+
+
+
+
+                            <tr>
+                                <td> Image </td>
+                                <td> <img alt="pas d'image" src="{{ asset('uploads/') ~ p.path }}"  width="120" height="60"> </td>
+                            </tr>
+                            <tr>
+                                <td> Titre </td>
+                                <td> {{ p.titre}} </td>
+                            </tr>
+                            <tr>
+                                <td> Contenu </td>
+                                <td> {{ p.contenu}} </td>
+                            </tr>
+
+
+
+
+                        </table>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <br>
+        <a class="ui icon button  primary" href="{{ path('presentation_edit', {'id' : p.id}) }}"><span class="btn info" aria-hidden="true"> Modifier </span></a>
+
+        </div>
+    {% endfor %}#}
+
+
+
+
+{% endblock %}
+
+{% block slider %} {% endblock %}
+
+

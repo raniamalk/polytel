@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> News letter </title>
+</head>
+<body>
+
+
+        <!-- Newsletter -->
+
+        <div class="newsletter nl_line">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="newsletter_content text-center">
+                            <div class="newsletter_title">INSCRIPTION À LA NEWSLETTER</div>
+                            <div class="newsletter_text"><p class="p1"> Inscrivez-vous à notre liste de diffusion pour obtenir les dernières mises à jour et offres </p></div>
+                            <div class="newsletter_form_container">
+                                {#<form action="#" id="newsletter_form" class="newsletter_form">#}
+                                    <form action="{{ path('newsletter_add') }} " method="post" id="newsletter_form" class="newsletter_form"{#{{ form_enctype(form) }}#} >
+
+                                        {{ form_start(form) }}
+                                            {#<input type="email" class="newsletter_input" required="required">#}
+                                            {{ form_widget(form.email, {'attr': {'class': 'newsletter_input ','placeholder': ' Entrer votre email ', 'id':'inputdefault'}}) }}
+                                            {#<button class="newsletter_button trans_200"><span>Subscribe</span></button>#}
+                                            <button type="submit" class="newsletter_button trans_200"><span>Souscrire</span></button>
+                                        {{ form_end(form) }}
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+</body>
+</html>

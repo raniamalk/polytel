@@ -1,0 +1,40 @@
+{% extends 'SyliusAdminBundle::layout.html.twig' %}
+
+{% block title %} Certificat {% for i in 1|somme %} | {{ i.nom }} {% endfor %} {#{{ parent() }}#}{% endblock %}
+
+{% block content %}
+
+
+<h1> Ajout d'un certificat </h1>
+
+
+
+{{ form_start(form) }}
+
+    <br>
+    <div class="form-group row">
+        <label class="col-sm-2 form-control-label"> Titre </label>
+        <div class="col-sm-10">
+            {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'id':'inputdefault'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 form-control-label"> Cerificat </label>
+        <div class="col-sm-10">
+            {{ form_widget(form.file, {'attr': {'class': 'form-control', 'id':'inputdefault'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-4 offset-sm-3">
+            <button type="submit" class="btn btn-success">Enregistrer</button>
+        </div>
+    </div>
+
+{{ form_end(form) }}
+
+
+
+
+{% endblock %}

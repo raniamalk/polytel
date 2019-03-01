@@ -1,0 +1,57 @@
+# config/packages/_sylius.yaml
+sylius_grid:
+    grids:
+        app_admin_infocontact:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: AppBundle\Entity\infocontact
+            fields:
+                nom:
+                    type: string
+                    label: sylius.ui.nom
+                adresse:
+                     type: string
+                     label: sylius.ui.adresse
+                email:
+                     type: string
+                     label: sylius.ui.email
+                telephone:
+                     type: string
+                     label: sylius.ui.telephone
+                fax:
+                     type: string
+                     label: sylius.ui.fax
+                facebook:
+                     type: string
+                     label: sylius.ui.facebook
+                linkedin:
+                     type: string
+                     label: sylius.ui.linkedin
+                instagram:
+                     type: string
+                     label: sylius.ui.instagram
+                youtube:
+                     type: string
+                     label: sylius.ui.youtube
+                metadescription:
+                    type: string
+                    label: sylius.ui.metadescription
+                metakeywords:
+                    type: string
+                    label: sylius.ui.metakeywords
+#                enabled:
+#                    type: twig
+#                    label: sylius.ui.enabled
+#                    options:
+#                        template: "@SyliusUi/Grid/Field/enabled.html.twig"
+
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

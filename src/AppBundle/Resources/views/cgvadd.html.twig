@@ -1,0 +1,54 @@
+{#<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Conditions generales de vente </title>
+</head>
+<body>#}
+
+{% extends 'SyliusAdminBundle::layout.html.twig' %}
+
+{% block title %} CGV {% for i in 1|somme %} | {{ i.nom }} {% endfor %} {#{{ parent() }}#}{% endblock %}
+
+{% block content %}
+
+    <h1> Conditions generales de vente </h1>
+
+
+    {{ form_start(form) }}
+    <br>
+    <div class="form-group row">
+        <label class="col-sm-2 form-control-label"> Titre </label>
+        <div class="col-sm-9">
+            {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'id':'inputdefault'}}) }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 form-control-label"> Contenu </label>
+        <div class="col-sm-9">
+            {{ form_widget(form.contenu, {'attr': {'class': 'form-control', 'id':'inputdefault'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-4 offset-sm-3">
+            <button type="submit" class="btn btn-success">Enregistrer</button>
+        </div>
+    </div>
+
+{{ form_end(form) }}
+{#
+</body>
+</html>#}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        CKEDITOR.replace( 'cgv_contenu' );
+    </script>
+
+{% endblock %}
