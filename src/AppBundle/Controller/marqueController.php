@@ -11,6 +11,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\marque;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\marqueType;
+use Sylius\Component\Product\Model\Product;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -109,6 +110,8 @@ class marqueController extends Controller
 
     public function marqueAction (){
 
+        $repository = $this->getDoctrine()->getRepository('Sylius\Component\Product\Model\Product');
+        $product = $repository->findAll();
 
         $repository = $this->getDoctrine()->getRepository('AppBundle:marque');
         $marque = $repository->findAll();
@@ -116,11 +119,49 @@ class marqueController extends Controller
         $repository = $this->getDoctrine()->getRepository('AppBundle:textmarque');
         $textmarque = $repository->findAll();
 
-        return $this->render('@App/nosmarques.html.twig', array('marque'=>$marque, 'textmarque'=>$textmarque));
+        return $this->render('@App/nosmarques.html.twig', array('marque'=>$marque, 'textmarque'=>$textmarque, 'product'=>$product));
 
 
     }
 
+    public function ProductsByMarqueAction (Request $request){
+
+       /* $repository = $this->getDoctrine()->getRepository('Sylius\Component\Product\Model\Product');
+        $product = $repository->findAll();*/
+
+       /* $repository = $this->getDoctrine()->getRepository('AppBundle:marque');
+        $marque = $repository->findAll();*/
+
+       $marque_name= $request->query->get('marque_name');
+
+        $marque_name=
+                    array(
+                        'marque_name'=>$marque_name,
+                    );
+                $this->get('session')->set('marque_name', $marque_name);
+
+                return new Response(json_encode($marque_name), 200);
+
+
+        $repository = $this->getDoctrine()->getRepository('Sylius\Component\Product\Model\Product');
+        $product = $repository->findBy([
+            'marque' => $marque_name,
+        ]);
+
+
+        $em = $this->getDoctrine()->getManager();
+
+//        $query = $em->getRepository('Sylius\Component\Product\Model\Product')->createQueryBuilder('p')->select('*')
+//           /* ->where('p.marque like  :marque')
+//            ->setParameter('marque', $marque)*/
+//            ->getQuery()->getResult();
+
+            /*var_dump($product); die();*/
+
+        return $this->render('@App/productsmarques.html.twig', array('product'=>$product));
+
+
+    }
 
 
 }

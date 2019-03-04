@@ -8,9 +8,6 @@
     <link href="{{ asset('assets/front/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/contact.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/styles/contact_responsive.css') }}">
-    <script language="JavaScript" type="text/javascript" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script language="JavaScript" type="text/javascript" href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 
 {% endblock %}
 
@@ -55,29 +52,18 @@
     <!-- Page Content -->
     <div class="container contenu pages-visibility">
 
-        <div class="row">
-            {#<div class="col-sm-3">
-            </div>#}
-
-            {% for t in textmarque %}
-                <div class="col-sm-12 texte-marque">
-                    <h1>NOS MARQUES</h1>
-                    <h2 class="mt-4">{{ t.titre }}</h2>
-                    <p class="texte-style">{{ t.contenu }}.</p>
-                </div>
-            {% endfor %}
-
-        </div>
 
         <div class="row">
             {#<div class="col-sm-3">
             </div>#}
+            jjjjjjjjj
             <div class="col-sm-12">
-            {% for m in marque %}
+            {% for p in product %}
                 <div class="col-lg-3 col-sm-3 my-3">
-                    <div class="card" >
-                        <input value="{{ m.marque}}" id="marque_name">
-                       <a href="{{ path('marque_products')}}" id="marque" ><img class="card-img-top img-marque" src="{{ asset('uploads/') ~ m.path }}" alt="La marque {{ m.marque}}"></a>
+                    <div class="card">
+                        test
+                        {{ p.id }}
+                       {#<a href="{{ path('marque_products')}}" target="_blank" ><img class="card-img-top img-marque" src="{{ asset('uploads/') ~ m.path }}" alt="La marque {{ m.marque}}"></a>#}
                     </div>
                 </div>
             {% endfor %}
@@ -91,45 +77,6 @@
     <!-- /.container -->
 
 
-
-<p>Click on this paragraph.</p>
 {% endblock %}
 
 {% block slider %} {% endblock %}
-
-{% block javascripts %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script>
-        $(document).ready(function(){
-        $('#marque_name').click( function () {
-
-            var marque_name=  $('#marque_name').val();
-
-         alert(marque_name);
-           var data_send = {'marque_name':marque_name};
-            $.ajax({
-                url: '{{ path('marque_products') }}',
-                type: 'POST',
-                data: data_send,
-                statusCode: {
-                    //traitement en cas de succès
-                    200: function (response) {
-                        var successMessage = response;
-                        console.log(successMessage);
-
-                    },
-
-                    412: function (response) {
-                        var errorsForm = response.responseJSON.formErrors;
-                        //on affiche les erreurs...
-                        alert('error');
-
-                    }
-                }
-            });
-        });
-        });
-    </script>
-
-{% endblock %}
