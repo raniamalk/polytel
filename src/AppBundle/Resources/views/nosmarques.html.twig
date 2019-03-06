@@ -69,30 +69,43 @@
 
         </div>
 
+        <form  action="{{ path('marque_products')}}" method="post">
         <div class="row">
-            {#<div class="col-sm-3">
-            </div>#}
+            <div class="col-sm-3">
+            </div>
             <div class="col-sm-12">
-            {% for m in marque %}
-                <div class="col-lg-3 col-sm-3 my-3">
-                    <div class="card" >
-                        <input value="{{ m.marque}}" id="marque_name">
-                       <a href="{{ path('marque_products')}}" id="marque" ><img class="card-img-top img-marque" src="{{ asset('uploads/') ~ m.path }}" alt="La marque {{ m.marque}}"></a>
+
+            {% set count = 0 %}
+                {% for m in marque %}
+                    {% set count = count + 1 %}
+
+
+                    <div class="col-lg-3 col-sm-3 my-3">
+                        <div class="card" >
+                            {#<input value="{{ m.marque}}" id="marque_name{{ count }}" name="marque_name_sjksjksjkjksh{{ count }}">#}
+                            <a href="{{ path('marque_products_nom',{'nom':m.marque})}}" id="marque" ><img class="card-img-top img-marque" src="{{ asset('uploads/') ~ m.path }}" alt="La marque {{ m.marque}}"></a>
+                            {#<a  href="{{ path('marque_products',{'nom':m.marque}) }}"type="submit" id="marque" >{{ m.marque}}</a>#}
+                        </div>
                     </div>
-                </div>
+
+
             {% endfor %}
+           {# <input value="{{ count }}" name="marque_count"style="display: none">#}
+
+
+
 
             </div>
-
+            {#<input value="hp" id="marque_name" name="marque_name_sjksjksjkjksh">
+            <button type="submit" id="marque" >fffff</button>#}
         </div>
         <!-- /.row -->
+        </form>
 
     </div>
     <!-- /.container -->
 
 
-
-<p>Click on this paragraph.</p>
 {% endblock %}
 
 {% block slider %} {% endblock %}
@@ -102,7 +115,7 @@
 
     <script>
         $(document).ready(function(){
-        $('#marque_name').click( function () {
+        $('#marque_name_tes').click( function () {
 
             var marque_name=  $('#marque_name').val();
 
@@ -117,7 +130,6 @@
                     200: function (response) {
                         var successMessage = response;
                         console.log(successMessage);
-
                     },
 
                     412: function (response) {

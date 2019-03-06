@@ -56,13 +56,15 @@
         <div class="row">
             {#<div class="col-sm-3">
             </div>#}
-            jjjjjjjjj
+
             <div class="col-sm-12">
             {% for p in product %}
                 <div class="col-lg-3 col-sm-3 my-3">
                     <div class="card">
                         test
                         {{ p.id }}
+                        {{ p.code }}
+                        {{ p.name }}
                        {#<a href="{{ path('marque_products')}}" target="_blank" ><img class="card-img-top img-marque" src="{{ asset('uploads/') ~ m.path }}" alt="La marque {{ m.marque}}"></a>#}
                     </div>
                 </div>

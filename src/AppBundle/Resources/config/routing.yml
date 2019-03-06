@@ -215,10 +215,12 @@ marque:
     defaults:   { _controller: AppBundle:marque:marque }
 
 marque_products:
-    path:       /{_locale}/marque/products
+    path:       /{_locale}/marque/products/
     defaults:   { _controller: AppBundle:marque:ProductsByMarque }
 
-
+marque_products_nom:
+    path:       /{_locale}/marque/products/{nom}
+    defaults:   { _controller: AppBundle:marque:ProductsByMarquenom }
 ##################### Textmarque ########################
 
 textmarque_add:
